@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "convert bundle paths to IDS to save bytes in browserify bundles",
   "main": "index.js",
+  "bin": {
+    "bundle-collapser": "bin/cmd.js"
+  },
   "dependencies": {
     "browser-pack": "~3.1.1",
     "browser-unpack": "~0.2.3",
-    "falafel": "~0.3.1"
+    "concat-stream": "^1.4.6",
+    "falafel": "~0.3.1",
+    "minimist": "^0.2.0"
   },
   "devDependencies": {
-    "concat-stream": "~1.4.6",
     "tape": "^2.13.2"
   },
   "scripts": {
