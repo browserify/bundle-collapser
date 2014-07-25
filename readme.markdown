@@ -53,6 +53,21 @@ console.log(foo(5) * bar(2));
 },{}]},{},[3]);
 ```
 
+# usage
+
+There is also a command-line program included in this distribution:
+
+```
+usage: bundle-collapser {FILE | -} {OPTIONS}
+
+  Collapse a browser-pack/browserify bundle from STDIN or a FILE.
+
+OPTIONS:
+
+  -h --help  Show this message.
+
+```
+
 # methods
 
 ``` js
@@ -68,10 +83,16 @@ dependency targets in the "deps" fields from the unpacking.
 
 # install
 
-With [npm](https://npmjs.org) do:
+With [npm](https://npmjs.org), to get the library do:
 
 ```
 npm install bundle-collapser
+```
+
+and to get the command-line program do:
+
+```
+npm install -g bundle-collapser
 ```
 
 # license
