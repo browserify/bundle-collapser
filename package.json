@@ -11,7 +11,8 @@
     "browser-unpack": "~0.2.3",
     "concat-stream": "^1.4.6",
     "falafel": "~0.3.1",
-    "minimist": "^0.2.0"
+    "minimist": "^0.2.0",
+    "through2": "^1.0.0"
   },
   "devDependencies": {
     "tape": "^2.13.2"
