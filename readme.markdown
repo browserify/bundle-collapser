@@ -1,14 +1,18 @@
 # bundle-collapser
 
-convert bundle paths to IDs to save bytes in browserify bundles
+Convert bundle paths to IDs to save bytes in browserify bundles.
+
+i.e. `require('some/long/path')` => `require(2)`
 
 [![build status](https://secure.travis-ci.org/substack/bundle-collapser.png)](http://travis-ci.org/substack/bundle-collapser)
 
-# example
+# how to use it
+
+### browserify plugin
 
 The easiest way to use bundle-collapser is from the plugin:
 
-```
+```sh
 $ browserify -p bundle-collapser/plugin main.js
 ```
 
@@ -33,11 +37,54 @@ console.log(foo(5) * bar(2));
 
 },{}]},{},[3]);
 ```
-## api
+
+### grunt
+Gruntfile.js
+```js
+var collapse = require('bundle-collapser/plugin');
+module.exports = function(grunt){
+  grunt.initConfig({
+    browserify: {
+      dev: {
+        files: {'bundle.js': ['main.js']},
+        options: {
+          plugin: [collapse]
+        }
+      }
+    }
+  });
+  grunt.loadNpmTasks('grunt-browserify');
+};
+```
+
+### gulp
+gulpfile.js
+```js
+var collapse = require('bundle-collapser/plugin');
+gulp.task('default', function() {
+  return browserify('./main.js')
+    .plugin(collapse)
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('scripts'));
+});
+```
+
+### node api
 
 You can use bundle-collapser from the api too:
 
-``` js
+```js
+var collapse = require('bundle-collapser');
+var stream = collapse(src);
+```
+
+Return a readable `stream` of output from
+[browser-pack](https://npmjs.org/package/browser-pack) with the input source
+string `src` converted to have its `require()` calls collapsed down to the
+dependency targets in the "deps" fields from the unpacking.
+
+```js
 var collapse = require('bundle-collapser');
 var fs = require('fs');
 
@@ -45,7 +92,7 @@ var src = fs.readFileSync(__dirname + '/bundle.js', 'utf8');
 collapse(src).pipe(process.stdout);
 ```
 
-# usage
+### command-line
 
 There is also a command-line program included in this distribution:
 
@@ -57,34 +104,26 @@ usage: bundle-collapser {FILE | -} {OPTIONS}
 OPTIONS:
 
   -h --help  Show this message.
-
 ```
 
-# methods
+Piping is also supported:
 
-``` js
-var collapse = require('bundle-collapser')
+```sh
+$ browserify main.js | bundle-collapser | uglifyjs -cm > bundle.js
 ```
-
-## var stream = collapse(src)
-
-Return a readable `stream` of output from
-[browser-pack](https://npmjs.org/package/browser-pack) with the input source
-string `src` converted to have its `require()` calls collapsed down to the
-dependency targets in the "deps" fields from the unpacking.
 
 # install
 
 With [npm](https://npmjs.org), to get the library do:
 
-```
-npm install bundle-collapser
+```sh
+$ npm install bundle-collapser
 ```
 
 and to get the command-line program do:
 
-```
-npm install -g bundle-collapser
+```sh
+$ sudo npm install -g bundle-collapser
 ```
 
 # license
