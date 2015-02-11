@@ -25,6 +25,6 @@ var output = outfile && outfile !== '-'
     : process.stdout
 ;
 
-input.pipe(concat(function (body) {
+input.pipe(concat({encoding: 'string'}, function (body) {
     collapse(body).pipe(output);
 }));
