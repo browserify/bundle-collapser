@@ -7,15 +7,15 @@
     "bundle-collapser": "bin/cmd.js"
   },
   "dependencies": {
-    "browser-pack": "^4.0.0",
-    "browser-unpack": "^1.0.0",
-    "concat-stream": "^1.4.6",
-    "falafel": "^1.0.0",
-    "minimist": "^0.2.0",
-    "through2": "^1.0.0"
+    "browser-pack": "^5.0.1",
+    "browser-unpack": "^1.1.0",
+    "concat-stream": "^1.5.0",
+    "falafel": "^1.2.0",
+    "minimist": "^1.1.1",
+    "through2": "^2.0.0"
   },
   "devDependencies": {
-    "tape": "^2.13.2"
+    "tape": "^4.0.1"
   },
   "scripts": {
     "test": "tape test/*.js"
@@ -26,15 +26,15 @@
   },
   "homepage": "https://github.com/substack/bundle-collapser",
   "keywords": [
-    "bundle",
     "browserify",
+    "bundle",
     "compress",
     "minify",
     "require"
   ],
   "author": {
-    "name": "James Halliday",
     "email": "mail@substack.net",
+    "name": "James Halliday",
     "url": "http://substack.net"
   },
   "license": "MIT"

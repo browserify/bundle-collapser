@@ -16,7 +16,12 @@ test('early return', function (t) {
         
         var rows = unpack(body.toString('utf8'));
         rows.forEach(function (row) {
-            t.deepEqual(row, expected.shift());
+            t.deepEqual(trim(row), trim(expected.shift()));
         });
     }));
 });
+
+function trim (a) {
+  a.source = a.source.trim();
+  return a;
+}
