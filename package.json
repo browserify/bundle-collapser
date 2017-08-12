@@ -10,7 +10,7 @@
     "browser-pack": "^5.0.1",
     "browser-unpack": "^1.1.0",
     "concat-stream": "^1.5.0",
-    "falafel": "^1.2.0",
+    "falafel": "^2.1.0",
     "minimist": "^1.1.1",
     "through2": "^2.0.0"
   },
