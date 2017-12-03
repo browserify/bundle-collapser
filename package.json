@@ -7,7 +7,7 @@
     "bundle-collapser": "bin/cmd.js"
   },
   "dependencies": {
-    "browser-pack": "^5.0.1",
+    "browser-pack": "^6.0.2",
     "browser-unpack": "^1.1.0",
     "concat-stream": "^1.5.0",
     "falafel": "^2.1.0",
