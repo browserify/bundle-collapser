@@ -1,6 +1,6 @@
 {
   "name": "bundle-collapser",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "convert bundle paths to IDS to save bytes in browserify bundles",
   "main": "index.js",
   "bin": {
