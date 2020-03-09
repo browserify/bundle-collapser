@@ -22,9 +22,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/substack/bundle-collapser.git"
+    "url": "git://github.com/browserify/bundle-collapser.git"
   },
-  "homepage": "https://github.com/substack/bundle-collapser",
+  "homepage": "https://github.com/browserify/bundle-collapser",
   "keywords": [
     "browserify",
     "bundle",

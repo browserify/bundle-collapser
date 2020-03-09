@@ -2,7 +2,7 @@
 
 convert bundle paths to IDs to save bytes in browserify bundles
 
-[![build status](https://secure.travis-ci.org/substack/bundle-collapser.png)](http://travis-ci.org/substack/bundle-collapser)
+[![build status](https://secure.travis-ci.org/browserify/bundle-collapser.png)](http://travis-ci.org/browserify/bundle-collapser)
 
 # example
 
