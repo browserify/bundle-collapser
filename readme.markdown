@@ -66,12 +66,23 @@ OPTIONS:
 var collapse = require('bundle-collapser')
 ```
 
-## var stream = collapse(src)
+## var stream = collapse(src, opts)
 
 Return a readable `stream` of output from
 [browser-pack](https://npmjs.org/package/browser-pack) with the input source
 string `src` converted to have its `require()` calls collapsed down to the
 dependency targets in the "deps" fields from the unpacking.
+
+Replacements for custom require calls such as `_dereq_` or `env.getTemplate`
+from [nunjucksify](https://www.npmjs.com/package/nunjucksify/) can be defined
+with `custom` property from `opts` argument. `custom` takes array of
+replacement objects, with properties:
+
+* `replacement`: replacement for found node, where `%s` is used as placeholder
+for replacement module ID
+* `value`: original module ID
+* `check`: provides argument `node` which is currently traversed node.
+It should return boolean to indicate that this is the node you want to replace.
 
 # install
 
